@@ -9,25 +9,52 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: appBar(),
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
-            padding: const EdgeInsets.all(20),
-            child: const TextField(
-              decoration: InputDecoration(
-                filled: true,
-                fillColor: Colors.white,
-                hintText: 'Search Pankake',
-                hintStyle: TextStyle(
-                  color: Color.fromARGB(255, 163, 153, 150),
-                  fontSize: 14,
+          _searchField(),
+          const SizedBox(height: 15),
+          const Column(
+            children: [
+              Padding(
+                padding: EdgeInsets.only(left: 20),
+                child: Text(
+                  'Category',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
-                border: OutlineInputBorder(
-                borderSide: BorderSide.none
-                )
               ),
-            ),
+               const SizedBox(height: 15),
+            ],
           )
         ],
+      ),
+    );
+  }
+
+  Container _searchField() {
+    return Container(
+      padding: const EdgeInsets.all(20),
+      child: const TextField(
+        decoration: InputDecoration(
+            filled: true,
+            fillColor: Colors.white,
+            hintText: 'Search Pankake',
+            hintStyle: TextStyle(
+              color: Color.fromARGB(255, 163, 153, 150),
+              fontSize: 14,
+            ),
+            prefixIcon: Icon(
+              Icons.search,
+              color: Color.fromARGB(255, 163, 153, 150),
+            ),
+            suffixIcon: Icon(
+              Icons.mic,
+              color: Color.fromARGB(255, 163, 153, 150),
+            ),
+            border: OutlineInputBorder(borderSide: BorderSide.none)),
       ),
     );
   }
