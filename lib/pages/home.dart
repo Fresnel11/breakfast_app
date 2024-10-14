@@ -8,6 +8,27 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: appBar(),
+      body: Column(
+        children: [
+          Container(
+            padding: const EdgeInsets.all(20),
+            child: const TextField(
+              decoration: InputDecoration(
+                filled: true,
+                fillColor: Colors.white,
+                hintText: 'Search Pankake',
+                hintStyle: TextStyle(
+                  color: Color.fromARGB(255, 163, 153, 150),
+                  fontSize: 14,
+                ),
+                border: OutlineInputBorder(
+                borderSide: BorderSide.none
+                )
+              ),
+            ),
+          )
+        ],
+      ),
     );
   }
 
